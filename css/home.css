@@ -1,0 +1,511 @@
+/* 引入 Google Fonts 的 Roboto 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --dark-color: #333;
+  --light-color: #f8f9fa;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #ff5722;
+}
+
+/* 全局样式 */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 导航栏样式 */
+.navbar {
+  box-shadow: 0 2px 5px var(--shadow-color);
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-brand img {
+  max-width: 150px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+.navbar-toggler {
+  border-color: var(--shadow-color);
+}
+
+.navbar-nav.nav-item.nav-link {
+  color: var(--dark-color);
+  transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbar-nav.nav-item.nav-link:hover,
+.navbar-nav.nav-item.nav-link.active {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+/* 首页（Jumbotron）样式 */
+.jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('home_background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 70px 0;
+  margin-top: 56px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 1.5s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.jumbotron h1.display-4 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.jumbotron p.display-3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.jumbotron.lead {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.jumbotron.btn.btn-primary {
+  padding: 15px 35px;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  border: none;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 3px 5px var(--shadow-color);
+}
+
+.jumbotron.btn.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-5px);
+}
+
+.jumbotron.btn.btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 关于我们 section 样式 */
+#about {
+  padding: 80px 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#about img:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#about h2 {
+  margin-bottom: 30px;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+#about p {
+  text-align: justify;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  #about.row {
+    flex-direction: column;
+  }
+
+  #about img {
+    margin-bottom: 30px;
+  }
+}
+
+/* 业务范围 section 样式 */
+#services {
+  padding: 80px 0;
+  background-color: var(--light-color);
+  animation: fadeIn 1s ease-in-out;
+}
+
+#services h2 {
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card-text {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .card {
+    margin-bottom: 40px;
+  }
+}
+
+/* 新闻资讯 section 样式 */
+#news {
+  padding: 80px 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#news h2 {
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.nav-tabs.nav-link {
+  border: none;
+  border-radius: 0;
+  color: #666;
+  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+.nav-tabs.nav-link.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-tabs.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.tab-pane {
+  padding-top: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .nav-tabs.nav-link {
+    margin-bottom: 10px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+}
+
+/* 团队成员展示样式 */
+section.team-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+h2.about-title,
+h2.team-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+article.team-member {
+  text-align: center;
+  width: 300px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 6px;
+  transition: transform 0.3s ease-in-out;
+}
+
+article.team-member:hover {
+  transform: translateY(-10px);
+}
+
+article.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+article.team-member h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.3px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+article.team-member p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 联系我们 section 样式 */
+#contact {
+  padding: 80px 0;
+  background-color: var(--light-color);
+  animation: fadeIn 1s ease-in-out;
+}
+
+#contact h2 {
+  margin-bottom: 30px;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#contact ul li {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+#contact ul li i {
+  margin-right: 10px;
+}
+
+#contact ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#contact ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* 合作伙伴展示样式 */
+section.partner-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+article.partner {
+  text-align: center;
+  width: 250px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article.partner img {
+  width: 120px;
+  border-radius: 20%;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+article.partner h3 {
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+article.partner p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* 合作伙伴卡片横向排版 */
+.partner-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+article.partner a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: hsl(220, 5%, 12%);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* 返回顶端按钮样式 */
+button.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: background-color 0.3s;
+}

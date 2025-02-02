@@ -1,0 +1,52 @@
+:root {
+    --light-color: #f8f9fa;
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+  }
+
+/* 联系我们 section 样式 */
+#contact {
+    padding: 80px 0;
+    background-color: var(--light-color);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  #contact h2 {
+    margin-bottom: 30px;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  
+  #contact ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #contact ul li {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  #contact ul li i {
+    margin-right: 10px;
+  }
+  
+  #contact ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  #contact ul li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* 定义 fadeIn 动画 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

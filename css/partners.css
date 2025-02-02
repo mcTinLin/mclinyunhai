@@ -1,0 +1,53 @@
+/* 合作伙伴部分整体容器样式 */
+.partners-content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 合作伙伴标题样式 */
+.partners-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 单个合作伙伴项样式 */
+.partner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease;
+}
+
+.partner-item:hover {
+    transform: scale(1.05);
+}
+
+/* 合作伙伴 logo 样式 */
+.partner-item img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* 合作伙伴名称样式 */
+.partner-item h3 {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* 合作伙伴描述样式 */
+.partner-item p {
+    font-size: 1.1rem;
+    color: #777;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 80%;
+}
