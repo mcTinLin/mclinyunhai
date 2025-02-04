@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示 - 凌云海官网</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #0056b3;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --accent-color: #ff5722;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            box-shadow: 0 2px 5px var(--shadow-color);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .navbar-brand img {
+            max-width: 150px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border-color: var(--shadow-color);
+        }
+
+        .navbar-nav.nav-item.nav-link {
+            color: var(--dark-color);
+            transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .navbar-nav.nav-item.nav-link:hover,
+        .navbar-nav.nav-item.nav-link.active {
+            color: white;
+            background-color: var(--primary-color);
+        }
+
+        #services {
+            padding: 4rem 0;
+        }
+
+        #services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            margin-bottom: 2rem;
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            height: 400px;
+            /* 设置固定高度，让图片区域大小统一 */
+            object-fit: cover;
+            /* 让图片填满容器，可能会裁剪部分图片 */
+            border-bottom: 4px solid #3498db;
+            transition: opacity 0.3s ease;
+            opacity: 0.9;
+            filter: grayscale(10%);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .card:hover .card-img-top {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .card-body {
+            padding: 1.8rem;
+        }
+
+        .card-title {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn.btn-outline-primary {
+            border-color: #3498db;
+            color: #3498db;
+            transition: all 0.3s ease;
+            border-width: 2px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .btn.btn-outline-primary:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: hsl(220, 5%, 12%);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* 返回顶端按钮样式 */
+        button.back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/assets/logo/team_logo.png" alt="logo" width="500"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">网站首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">关于我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/works">作品展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://afdian.com/@mclinyunhai">支持我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">新闻资讯</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">联系我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/partners">合作伙伴</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <h2 class="text-center mb-4">我们的项目</h2>
+            <br>
+            <br>
+            <div class="row flex-column align-items-center">
+                <div class="col-md-8 mb-4">
+                    <div class="card">
+                        <img src="/assets/pic/5d820122498c51298366fefda4bd3303.webp" class="card-img-top" alt="card-1"
+                            loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">创神大陆</h5>
+                            <p class="card-text">
+                                创神大陆是凌云海工作室精心发起的网易我的世界服务器项目。目前由实力出众的星月制作组负责制作，他们凭借丰富的经验和创新的思维，为服务器注入了全新的活力。在创神大陆中，玩家将置身于一个充满奇幻色彩的世界，这里有着广袤无垠的地图等待探索，还有各种独特的生物和神秘的遗迹。游戏内设有丰富多样的玩法，比如特色的神装系统，玩家可以通过不断冒险和挑战来收集材料，打造属于自己的强大神装，提升战斗能力。此外，神秘的副本探险玩法更是充满了刺激与惊喜，每个副本都有独特的机制和强大的 BOSS 等待玩家去征服。无论是喜欢独自探索的独行侠，还是热衷于团队合作的玩家，都能在创神大陆中找到属于自己的乐趣。
+                            </p>
+                            <a href="#" class="btn btn-outline-primary">了解详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mb-4">
+                    <div class="card">
+                        <img src="/assets/pic/6396ba10934e18e9b4cef16abf0da4df.webp" class="card-img-top" alt="card-2"
+                            loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">星梦起源</h5>
+                            <p class="card-text">
+                                星梦起源是凌云海工作室倾力打造的 Minecraft Java 版服务器项目，由经验丰富且热情满满的天灵担任服主。该服务器致力于为玩家营造一个活跃、和谐且充满乐趣的社区氛围。在星梦起源中，玩家可以体验到多种精心设计的游戏模式。生存模式为玩家提供了一个原汁原味的Minecraft生存体验，玩家需要在这个世界中收集资源、建造家园、抵御怪物的袭击，感受从零开始建设的成就感。而竞技模式则充满了挑战与激情，玩家可以与其他高手一决高下，展示自己的操作技巧和策略思维。除此之外，服务器还会定期举办各种丰富多彩的活动，比如限时的打怪活动、建筑比赛等。这些活动不仅为玩家带来了丰厚的福利和奖励，还增进了玩家之间的交流与互动，让大家在游戏中结交到更多志同道合的朋友。
+                            </p>
+                            <a href="/works/sdoserver/" class="btn btn-outline-primary">了解详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mb-4">
+                    <div class="card">
+                        <img src="/assets/pic/5604d17ce71d080c8bfa19cad0464259.webp" class="card-img-top" alt="card-3"
+                            loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">敬请期待</h5>
+                            <p class="card-text">
+                                目前我们暂时没有新的项目与大家见面，但请各位玩家放心，我们的团队正在日夜兼程地努力筹备全新的项目。在背后，我们的开发人员们不断地进行创意碰撞、技术钻研和方案优化，力求为大家带来前所未有的游戏体验。虽然现在还不能透露更多的细节，但可以确定的是，未来的项目将会融合当下最流行的元素和玩法，无论是画面质量、游戏机制还是社交互动方面，都将有质的飞跃。请大家持续关注我们的官网，一旦有新的消息，我们会第一时间公布，期待与大家在新的项目中再次相聚，共同开启新的游戏篇章！
+                            </p>
+                            <a href="#" class="btn btn-outline-primary">了解详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="back-to-top">返回顶端</button>
+
+    <footer>
+        <p class="footer-p">Copyright © 2023-2025 MCLINYUNHAI. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll('.card');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            const buttons = document.querySelectorAll('.btn.btn-outline-primary');
+            buttons.forEach(button => {
+                button.addEventListener('mousedown', function () {
+                    this.style.transform = 'scale(0.95)';
+                });
+                button.addEventListener('mouseup', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        // 获取返回顶端按钮元素
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        // 监听页面滚动事件
+        window.addEventListener('scroll', function () {
+            // 如果页面滚动距离大于100px，显示按钮；否则隐藏按钮
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // 点击返回顶端按钮时，将页面滚动到顶部
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
