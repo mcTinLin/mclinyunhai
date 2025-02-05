@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合作伙伴 - 凌云海官网</title>
+    <link rel="shortcut icon" href="/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/partners.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/assets/logo/team_logo.png" alt="logo" width="500"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">网站首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">关于我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/works">作品展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://afdian.com/@mclinyunhai">支持我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">新闻资讯</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">联系我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/partners">合作伙伴</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 标题栏 -->
+    <header>
+        <div class="header-bg"></div>
+        <h1>合作伙伴</h1>
+        <p>优秀伙伴携手，共创美好未来</p>
+    </header>
+    <!-- 主体内容 -->
+    <main>
+        <h2>我们的合作伙伴</h2>
+        <ul class="partner-list">
+            <li style="--i: 1;">
+                <img src="/assets/partner/partner1.jpg" alt="合作伙伴1">
+                <div>
+                    <h3>星河</h3>
+                    <p>星河（原名神域），创立于 2022 年 9 月末 一直坚持与创立完美的末日剧情与玩法 不与时代脱轨 团队坚持不懈努力造服 终将取得伟岸成就！</p>
+                </div>
+            </li>
+            <li style="--i: 2;">
+                <img src="/assets/partner/partner2.jpg" alt="合作伙伴2">
+                <div>
+                    <h3>寒玉</h3>
+                    <p>寒玉， Minecraft 冒险新天地！探索无尽世界，建造梦想家园，与伙伴们共同冒险，享受无限乐趣。加入我们，开启你的建造与探险之旅！</p>
+                </div>
+            </li>
+            <li style="--i: 3;">
+                <img src="/assets/partner/partner3.png" alt="合作伙伴3">
+                <div>
+                    <h3>灵域</h3>
+                    <p>灵域，创建于 2021 年 6 月 21 日。主要服务器运营类型：地铁服，资源服，挖矿升级服，副本服。</p>
+                </div>
+            </li>
+            <li style="--i: 4;">
+                <img src="/assets/partner/partner4.jpg" alt="合作伙伴4">
+                <div>
+                    <h3>茶仙寺</h3>
+                    <p>茶仙寺（茶道天宫）创立于 2024 年 6 月 19 日，主营服务器类型：RPG、资源、数据化。与众多团队为友服并合作，加入我们的旗下，让我们的团队做大做强！</p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>Copyright © 2023-2025 MCLINYUNHAI. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 获取返回顶端按钮元素
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        // 监听页面滚动事件
+        window.addEventListener('scroll', function () {
+            // 如果页面滚动距离大于100px，显示按钮；否则隐藏按钮
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // 点击返回顶端按钮时，将页面滚动到顶部
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

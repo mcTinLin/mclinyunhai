@@ -1,53 +1,314 @@
-/* 合作伙伴部分整体容器样式 */
-.partners-content {
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        /* 定义变量 */
+        :root {
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --dark-color: #333;
+            --primary-color: #0072ff;
+            --secondary-color: #f4f4f4;
+        }
 
-/* 合作伙伴标题样式 */
-.partners-content h2 {
-    font-size: 2.5rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-}
+        /* 全局样式 */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+            color: #333;
+            perspective: 1000px;
+            padding-top: 70px;
+            /* 为固定导航栏留出空间 */
+        }
 
-/* 单个合作伙伴项样式 */
-.partner-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
-    transition: transform 0.3s ease;
-}
+        /* 导航栏样式 */
+        .navbar {
+            box-shadow: 0 2px 5px var(--shadow-color);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
 
-.partner-item:hover {
-    transform: scale(1.05);
-}
+        .navbar.scrolled {
+            background-color: white;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
 
-/* 合作伙伴 logo 样式 */
-.partner-item img {
-    width: 200px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        .navbar-brand img {
+            max-width: 150px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-/* 合作伙伴名称样式 */
-.partner-item h3 {
-    font-size: 1.8rem;
-    color: #555;
-    margin-bottom: 10px;
-}
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
 
-/* 合作伙伴描述样式 */
-.partner-item p {
-    font-size: 1.1rem;
-    color: #777;
-    text-align: center;
-    line-height: 1.6;
-    max-width: 80%;
-}
+        .navbar-toggler {
+            border-color: var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-item {
+            margin: 0 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: var(--dark-color);
+            transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out, transform 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .navbar-nav .nav-item .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover::before,
+        .navbar-nav .nav-item .nav-link.active::before {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover,
+        .navbar-nav .nav-item .nav-link.active {
+            color: var(--primary-color);
+            background-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        /* 标题栏样式 */
+        header {
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInDown 1s ease;
+        }
+
+        header h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateZ(50px);
+        }
+
+        header p {
+            font-size: 24px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            transform: translateZ(30px);
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px) brightness(0.8);
+            z-index: -1;
+            transform: translateZ(-50px) scale(1.1);
+        }
+
+        /* 主体内容样式 */
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            animation: fadeInUp 1s ease;
+            transform-style: preserve-3d;
+        }
+
+        main h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            color: #0072ff;
+        }
+
+        /* 合作伙伴列表样式 */
+        .partner-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .partner-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInLeft 1s ease forwards;
+            animation-delay: calc(0.2s * var(--i));
+            transform-style: preserve-3d;
+        }
+
+        .partner-list li:nth-child(even) {
+            flex-direction: row-reverse;
+            animation-name: fadeInRight;
+        }
+
+        .partner-list li:hover {
+            transform: translateY(-10px) translateZ(20px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-list li:last-child {
+            border-bottom: none;
+        }
+
+        .partner-list img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 30px;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+
+        .partner-list li:hover img {
+            filter: grayscale(0%);
+        }
+
+        .partner-list h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0072ff;
+        }
+
+        .partner-list p {
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #00c6ff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 动画关键帧 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            header {
+                padding: 100px 20px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            main h2 {
+                font-size: 30px;
+            }
+
+            .partner-list li {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .partner-list li:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .partner-list img {
+                margin-bottom: 20px;
+            }
+        }
