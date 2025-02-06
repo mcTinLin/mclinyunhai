@@ -39,13 +39,8 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease;
   background-color: rgba(255, 255, 255, 0.95);
-}
-
-.navbar.scrolled {
-  background-color: white;
-  box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 .navbar-brand img {
@@ -59,52 +54,19 @@ body {
 
 .navbar-toggler {
   border-color: var(--shadow-color);
-  transition: transform 0.3s ease;
 }
 
-.navbar-toggler:hover {
-  transform: scale(1.1);
-}
-
-.navbar-nav .nav-item {
-  margin: 0 5px;
-  transition: transform 0.3s ease;
-}
-
-.navbar-nav .nav-item:hover {
-  transform: translateY(-3px);
-}
-
-.navbar-nav .nav-item .nav-link {
+.navbar-nav.nav-item.nav-link {
   color: var(--dark-color);
-  transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out, transform 0.3s ease;
+  transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out;
   padding: 10px 15px;
   border-radius: 5px;
-  position: relative;
 }
 
-.navbar-nav .nav-item .nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
+.navbar-nav.nav-item.nav-link:hover,
+.navbar-nav.nav-item.nav-link.active {
+  color: white;
   background-color: var(--primary-color);
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-item .nav-link:hover::before,
-.navbar-nav .nav-item .nav-link.active::before {
-  width: 80%;
-}
-
-.navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item .nav-link.active {
-  color: var(--primary-color);
-  background-color: transparent;
-  transform: translateY(-3px);
 }
 
 /* 首页（Jumbotron）样式 */
