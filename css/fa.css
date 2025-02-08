@@ -1,0 +1,399 @@
+/* 全局样式 */
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    animation: fadeInDown 1s ease;
+    position: relative;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sub-title {
+    font-size: 1.8em;
+    opacity: 0.8;
+}
+
+/* 主体内容样式 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 卡片布局样式 */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* 图片画廊样式 */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* 弹出框样式 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* 关闭按钮样式 */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 参加一周年活动部分样式 */
+.anniversary-event {
+    background: linear-gradient(135deg, #e0f7fa, #b2f0f2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 1s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anniversary-event h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.anniversary-event p {
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.register-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    color: white;
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 活动倒计时样式 */
+.countdown {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.countdown-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.countdown-label {
+    font-size: 1em;
+    color: #555;
+}
+
+/* 回顾往事部分样式 */
+.past-memories {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 40px 0;
+    animation: fadeInUp 1s ease;
+}
+
+.past-memories h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.memory {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+
+.memory:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.memory img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.memory-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.memory-content p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 280px;
+    margin: 0 30px;
+}
+
+.footer-about h4,
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.footer-links ul li a:hover {
+    color: #007bff;
+}
+
+.footer-contact ul.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer-contact ul.social-icons li {
+    margin-right: 15px;
+}
+
+.footer-contact ul.social-icons li a img {
+    width: 35px;
+    height: 35px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.footer-contact ul.social-icons li a img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    .sub-title {
+        font-size: 1.3em;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .image-gallery img {
+        width: 100%;
+    }
+
+    .anniversary-event {
+        padding: 30px;
+    }
+
+    .anniversary-event h2 {
+        font-size: 2em;
+    }
+
+    .countdown-item {
+        padding: 15px;
+    }
+
+    .countdown-value {
+        font-size: 1.5em;
+    }
+
+    .memory {
+        flex-direction: column;
+    }
+
+    .memory img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
